@@ -1,0 +1,88 @@
+<html>
+  <head>
+    <title>Vision Word Reading Test</title>
+
+    <script src="words-test.js"></script>
+    <script>
+      window.addEventListener(
+          "DOMContentLoaded",
+          (event) => {
+              console.log("onDOMContentLoaded");
+              add_control_change_handlers();
+              load_word_list("word-list.txt").then(initialize_words,
+                                                   console.log);
+              console.log("onDOMContentLoaded finished");
+          });
+    </script>
+    <style>
+      .controls
+      {
+          display: block;
+          font-size: large;
+      }
+
+      .text
+      {
+          display: block;
+      }
+
+      .theme-dark
+      {
+      }
+
+      .theme-light
+      {
+      }
+      
+    </style>
+  </head>
+  <body>
+    <h1>Vision Word Reading Test</h1>
+    
+    <div class="controls">
+      <table>
+        <tr>
+          <td>
+            <label for="theme">theme</label>
+          </td>
+          <td>
+            <select id="theme">
+              <option value="theme-dark">dark</option>
+              <option value="theme-light">light</option>
+            </select>
+          </td>
+        </tr>
+        <td>
+          <label for="font-family">font family</label>
+        </td>
+        <td>
+          <select id="font-family">
+            <option value="monospace">monospace</option>
+            <option value="ui-monospace">ui-monospace</option>
+            <option value="sans-serif">sans-serif</option>
+            <option value="ui-sans-serif">ui-sans-serif</option>
+            <option value="serif">serif</option>
+            <option value="ui-serif">ui-serif</option>
+            <option value="system-ui">system-ui</option>
+          </select>
+        </td>
+        <tr>
+          <td>
+            <label for="font-weight">font weight</label>
+          </td>
+          <td>
+            <select id="font-weight">
+              <option value="normal">normal</option>
+              <option value="bolder">bolder</option>
+              <option value="lighter">lighter</option>
+            </select>
+          </td>
+        </tr>
+      </table>
+    </div>
+    
+    <div id="text" class="text">
+    </div>
+  </body>
+</html>
+
