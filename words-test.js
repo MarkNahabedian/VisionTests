@@ -57,10 +57,11 @@ function initialize_words(word_list) {
         let size_elt = document.createElementNS(text_elt.namespaceURI, "span");
         size_elt.setAttribute("style",
                               "font-size: " + TEXT_SIZES[j] + ";");
+        size_elt.appendChild(document.createTextNode("" + TEXT_SIZES[j] + " "));
         for (let i = 0; i < WORDS_PER_SIZE; i++) {
             let word = word_list[Math.floor(Math.random() * wordcount)];
             let textnode = document.createTextNode(word + " ");
-            size_elt . appendChild(textnode);
+            size_elt.appendChild(textnode);
         }
         text_elt.appendChild(size_elt);
     }
