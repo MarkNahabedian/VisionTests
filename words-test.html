@@ -7,10 +7,10 @@
       window.addEventListener(
           "DOMContentLoaded",
           (event) => {
-              console.log("onDOMContentLoaded");
               add_control_change_handlers();
               load_word_list("2000_words.txt").then(initialize_words,
-                                                   console.log);
+                                                    console.log);
+              update_text();
           });
     </script>
     <style>

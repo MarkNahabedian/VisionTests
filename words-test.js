@@ -28,7 +28,6 @@ function update_text() {
     let text = document.getElementById("text");
     let family = document.querySelector("#font-family").value;
     let weignt = document.querySelector("#font-weight").value;
-    console.log(text, family, weignt);
     text.setAttribute("style",
                       "font-family: " + family + "; " +
                       "font-weight: " + weignt + ";");
@@ -40,7 +39,6 @@ function load_word_list(filename) {
             console.log(response.statusText);
             return;
         }
-        console.log("fetched " + filename);
         return response.text().then(
             function(txt) {
                 return txt.split('\n');
@@ -53,7 +51,6 @@ TEXT_SIZES = [ 30, 24, 16, 12, 10, 8, 6 ];
 WORDS_PER_SIZE = 20;
 
 function initialize_words(word_list) {
-    console.log("initializing words");
     let wordcount = word_list.length;
     text_elt = document.getElementById("text");
     for (let j = 0; j < TEXT_SIZES.length; j++) {
