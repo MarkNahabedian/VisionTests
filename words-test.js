@@ -8,6 +8,9 @@ function add_control_change_handlers() {
 
 function select_theme(event) {
     // Change class attribute of body element
+    let body = document.querySelector("html > body");
+    body.setAttribute("class",
+                      document.querySelector("#theme").value);
 }
 
 function select_font_family(event) {
@@ -22,6 +25,13 @@ function select_font_weight(event) {
 function update_text() {
     // Update the style attribute of the #text element based on the
     // falues of the selected font family and weight.
+    let text = document.getElementById("text");
+    let family = document.querySelector("#font-family").value;
+    let weignt = document.querySelector("#font-weight").value;
+    console.log(text, family, weignt);
+    text.setAttribute("style",
+                      "font-family: " + family + "; " +
+                      "font-weight: " + weignt + ";");
 }
 
 function load_word_list(filename) {

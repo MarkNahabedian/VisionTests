@@ -9,9 +9,8 @@
           (event) => {
               console.log("onDOMContentLoaded");
               add_control_change_handlers();
-              load_word_list("word-list.txt").then(initialize_words,
+              load_word_list("2000_words.txt").then(initialize_words,
                                                    console.log);
-              console.log("onDOMContentLoaded finished");
           });
     </script>
     <style>
@@ -28,10 +27,15 @@
 
       .theme-dark
       {
+          background-color: black;
+          color: white;
+          
       }
 
       .theme-light
       {
+          background-color: white;
+          color: black;
       }
       
     </style>
