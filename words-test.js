@@ -47,7 +47,7 @@ function load_word_list(filename) {
     });
 }
 
-TEXT_SIZES = [ 30, 24, 16, 12, 10, 8, 6 ];
+TEXT_SIZES = [ 36, 30, 24, 16, 14, 12, 10, 8, 6 ];
 WORDS_PER_SIZE = 20;
 
 function initialize_words(word_list) {
