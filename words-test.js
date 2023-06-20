@@ -47,16 +47,27 @@ function load_word_list(filename) {
     });
 }
 
+// Size in points (CSS pt):
 TEXT_SIZES = [ 36, 30, 24, 16, 14, 12, 10, 8, 6 ];
 WORDS_PER_SIZE = 20;
+
+// Using pt, text on my cell phone is half as high as expected -- 36pt
+// is only 1/4" high.
+// Using px, as sugfgested in
+// https://stackoverflow.com/questions/76496769/absolute-css-text-sizes-not-respected-for-small-displays-even-with-text-size-ad
+// doesn't seem to fix the problem though.
+function pt2px(pt) {
+    return 96 * pt / 72;
+}
 
 function initialize_words(word_list) {
     let wordcount = word_list.length;
     text_elt = document.getElementById("text");
     for (let j = 0; j < TEXT_SIZES.length; j++) {
-        let size_elt = document.createElementNS(text_elt.namespaceURI, "span");
+        let size_elt = document.createElementNS(text_elt.namespaceURI, "p");
         size_elt.setAttribute("style",
-                              "font-size: " + TEXT_SIZES[j] + "pt;");
+                              "font-size: " +
+                              TEXT_SIZES[j] + "pt;");
         size_elt.appendChild(document.createTextNode("" + TEXT_SIZES[j] + " "));
         for (let i = 0; i < WORDS_PER_SIZE; i++) {
             let word = word_list[Math.floor(Math.random() * wordcount)];
