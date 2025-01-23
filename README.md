@@ -12,6 +12,6 @@ displays random words at progressively smaller font sizes.  You can
 choose the font family and weight.
 
 The word list
-{2000_words.txt)[2000_words.txt]
+[2000_words.txt](2000_words.txt)
 came from
 [https://www.talkenglish.com/vocabulary/top-2000-vocabulary.aspx](https://www.talkenglish.com/vocabulary/top-2000-vocabulary.aspx).
